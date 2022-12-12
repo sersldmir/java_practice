@@ -1,4 +1,4 @@
-package hw_7;
+package hw_8.Library_classes;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -10,7 +10,7 @@ public class GivingLiterature extends Library{
     protected int number_of_days;
     protected int deposit;
 
-    GivingLiterature(String library_name, String library_adress, String library_city, String library_director_full_name,
+    public GivingLiterature(String library_name, String library_adress, String library_city, String library_director_full_name,
     String b_name_hall, String b_name_reader, String b_book_name, Date b_date_of_handling, int b_number_of_days,
     int b_deposit){
         super(library_name, library_adress, library_city, library_director_full_name);
@@ -30,10 +30,26 @@ public class GivingLiterature extends Library{
     }
 
     public String get_name_hall(){
-        return name_hall;
-    }
-    public String get_name_reader(){
-        return name_reader;
+        return this.name_hall;
     }
 
+    public String get_name_reader(){
+        return this.name_reader;
+    }
+
+    public String get_book_name(){
+        return this.book_name;
+    }
+
+    public Date get_date_of_handling(){
+        return this.date_of_handing;
+    }
+
+    public int get_number_of_days(){
+        return this.number_of_days;
+    }
+
+    public int get_deposit(){
+        return this.deposit;
+    }
 }

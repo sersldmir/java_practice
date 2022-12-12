@@ -1,5 +1,4 @@
-package hw_7;
-
+package hw_8.Library_classes;
 
 public class Reader extends Library{
     protected String first_name;
@@ -9,7 +8,7 @@ public class Reader extends Library{
     protected String gender;
     protected int age;
 
-    Reader(String library_name, String library_adress, String library_city, String library_director_full_name, 
+    public Reader(String library_name, String library_adress, String library_city, String library_director_full_name, 
     String reader_first_name, String reader_last_name, String reader_patr, String reader_job_place, String reader_gender,
     int reader_age){
         super(library_name, library_adress, library_city, library_director_full_name);
@@ -29,6 +28,26 @@ public class Reader extends Library{
 
     public String get_last_name(){
         return this.last_name;
+    }
+
+    public String get_first_name(){
+        return this.first_name;
+    }
+
+    public String get_patr(){
+        return this.patr;
+    }
+
+    public String get_job_place(){
+        return this.job_place;
+    }
+
+    public String get_gender(){
+        return this.gender;
+    }
+
+    public int get_age(){
+        return this.age;
     }
 
 }

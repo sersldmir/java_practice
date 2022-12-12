@@ -1,4 +1,4 @@
-package hw_7;
+package hw_8.Library_classes;
 
 public class ReadingRoom extends Library{
     protected String hall_name;
@@ -6,7 +6,7 @@ public class ReadingRoom extends Library{
     protected int floor;
     protected int office;
 
-    ReadingRoom(String library_name, String library_adress, String library_city, String library_director_full_name,
+    public ReadingRoom(String library_name, String library_adress, String library_city, String library_director_full_name,
     String r_hall_name, int r_number_of_books, int r_floor, int r_office){
         super(library_name, library_adress, library_city, library_director_full_name);
         this.hall_name = r_hall_name;
@@ -23,6 +23,18 @@ public class ReadingRoom extends Library{
     
     public String get_hall_name(){
         return this.hall_name;
+    }
+
+    public int get_number_of_books(){
+        return this.number_of_books;
+    }
+
+    public int get_floor(){
+        return this.floor;
+    }
+
+    public int get_office(){
+        return this.office;
     }
 
 }

@@ -1,10 +1,12 @@
-package hw_7;
+package hw_8.Library_classes;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class MatLibrary implements Serializable{
+    private static int ID_count = 0;
+    private int ID;
     private ArrayList<Reader> list_of_readers;
     private ArrayList<ReadingRoom> list_of_rooms;
     private ArrayList<GivingLiterature> list_of_literature;
@@ -13,7 +15,7 @@ public class MatLibrary implements Serializable{
     private String lib_city;
     private String lib_director_full_name;
 
-    MatLibrary(String l_name, String l_adress, String l_city, String l_dir){
+    public MatLibrary(String l_name, String l_adress, String l_city, String l_dir){
         this.lib_name = l_name;
         this.lib_adress = l_adress;
         this.lib_city = l_city;
@@ -21,6 +23,40 @@ public class MatLibrary implements Serializable{
         this.list_of_literature = new ArrayList<GivingLiterature>();
         this.list_of_readers = new ArrayList<Reader>();
         this.list_of_rooms = new ArrayList<ReadingRoom>();
+        this.ID = ID_count;
+        ID_count+=1;
+    }
+
+    public int ID(){
+        return this.ID;
+    }
+
+    public String lib_name(){
+        return this.lib_name;
+    }
+
+    public String lib_adress(){
+        return this.lib_adress;
+    }
+
+    public String lib_city(){
+        return this.lib_city;
+    }
+
+    public String lib_director_full_name(){
+        return this.lib_director_full_name;
+    }
+    
+    public ArrayList<Reader> list_of_readers(){
+        return list_of_readers;
+    }
+
+    public ArrayList<ReadingRoom> list_of_rooms(){
+        return list_of_rooms;
+    }
+
+    public ArrayList<GivingLiterature> list_of_literature(){
+        return list_of_literature;
     }
 
     public void add(String b_name_hall, String b_name_reader, String b_book_name, Date b_date_of_handling, int b_number_of_days,
@@ -57,6 +93,7 @@ public class MatLibrary implements Serializable{
 
     public void print_list(){
         for (GivingLiterature lit_el: this.list_of_literature){
+            System.out.printf("ID: %d; ", this.ID);
             System.out.println(lit_el);
             System.out.println("Информация о читателе");
             String b_name_hall = lit_el.get_name_hall();
